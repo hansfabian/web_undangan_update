@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitely | Web Undangan Digital Terpercaya</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <div class="layar-dalam">
+        <div class="logo">
+          <a href=""><img src="asset/Invintely.png" class="putih" /></a>
+          <a href=""><img src="asset/Invintely.png" class="hitam" /></a>
+        </div>
+        <div class="menu">
+          <a href="#" class="tombol-menu">
+            <span class="garis"></span>
+            <span class="garis"></span>
+            <span class="garis"></span>
+          </a>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="buatweb.php">Buat Web</a></li>
+            <li><a href="template.html">Tema Undangan</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="login.php">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="layar-penuh">
+      <header id="home">
+        <div class="overlay"></div>
+        <a href=""><img src="asset/Background Beranda.png" class="overlay" /></a>
+        </div>
+      </header>
+      <main>
+        <section id="temaundangan">
+          <div class="layar-dalam">
+            <h3>Tema Undangan</h3>
+            <p class="ringkasan">
+                Tersedia setidaknya +100 tema menarik yang dapat Anda pilih.
+                <br>
+                Beberapa diantaranya seperti di bawah ini.                
+            </p>
+          </div>
+          <div class="konten-isi">              
+            
+          </div>          
+        </section>
+        <section class="abuabu" id="support">
+          <div class="layar-dalam support">
+            <div>
+              <h6 class="judul-template">Bloom Theme</h6>
+              <img src="asset/template/template-1.png" />              
+              <a href="template/index.html" button class="custom-button primary">Preview</button></a>
+              </div>
+            <div class="label-template">
+              <h6>Dark Gold 2</h6>
+              <img src="asset/template/template-2.png" />
+              <a href="template/index2.html" button class="custom-button secondary">Preview</button></a>
+              </div>
+            <div>
+              <h6>Chic Floral</h6>
+              <img src="asset/template/template-3.png" />              
+              <a href="template/index3.html" button class="custom-button success">Preview</button></a>
+              </div>                        
+          </div>      
+          <p class="ringkasan">
+            Dan masih banyak lagi template pilihan
+            <br>
+            yang bisa anda gunakan.
+          </p>
+        </main>
+      <footer id="contact">
+        <div class="layar-dalam">
+          <div>
+            <h5>Invitely</h5>
+            Invitely adalah sebuah website yang memberikan layanan utama berupa pembuatan website pernikahan dengan berbagai fitur yang menarik, 
+            calon mempelai hanya tinggal mendaftar dan membuat website pernikahan hanya dalam beberapa langkah saja
+          </div>
+          <div>
+            <h5></h5>
+            
+          </div>
+          <div>
+            <h5></h5>
+            
+          </div>
+          <div>
+            <h5>Informasi</h5>
+            Tentang Kami
+            <gmaps class="com"></gmaps>
+          </div>
+        </div>
+        <div class="layar-dalam">
+          <div class="copyright">&copy; 2024 Invitely Indonesia</div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          let user = localStorage.getItem("loggedInUser");
+          let loginMenu = document.getElementById("loginMenu");
+      
+          if (user) {
+              loginMenu.innerText = "Logout";
+              loginMenu.href = "#";
+              loginMenu.addEventListener("click", function () {
+                  localStorage.removeItem("loggedInUser");
+                  window.location.href = "logout.php";
+              });
+          }
+      });
+      </script>      
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="javascript.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          let user = localStorage.getItem("loggedInUser");
+   
+          if (user) {
+              document.getElementById("loginMenu").innerText = "Logout";
+              document.getElementById("loginMenu").href = "#";
+              document.getElementById("loginMenu").addEventListener("click", function () {
+                  localStorage.removeItem("loggedInUser");
+                  window.location.reload();
+              });
+          }
+      });
+   
+      function loginUser(username) {
+          localStorage.setItem("loggedInUser", username);
+          window.location.href = "index.html";
+      }
+   </script>   
+  </body>
+</html>
