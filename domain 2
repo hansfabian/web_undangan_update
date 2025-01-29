@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitely | Web Undangan Digital Terpercaya</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <div class="layar-dalam">
+        <div class="logo">
+          <a href="index.html"><img src="asset/Invintely.png" class="putih" /></a>
+          <a href="index.html"><img src="asset/Invintely.png" class="hitam" /></a>
+        </div>
+        <div class="menu">
+          <a href="#" class="tombol-menu">
+            <span class="garis"></span>
+            <span class="garis"></span>
+            <span class="garis"></span>
+          </a>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="buatweb.html">Buat Web</a></li>
+            <li><a href="template.html">Tema Undangan</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <style>
+        body {            
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar {                        
+            width: 250px;
+            height: 150vh;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar img {            
+            width: 50px;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            color: #fff;
+        }
+        .sidebar p {
+            text-align: center;
+            font-weight: bold;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .sidebar ul li a:hover {
+            background-color: #575757;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            text-align: left;
+        }
+        .hidden {
+            display: none;
+        }
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        font-family: 'Questrial', sans-serif;
+    }
+
+    img {
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .content img {
+        width: 200px;
+        border-radius: 12px;
+    }
+
+    .custom-button { 
+    padding: 10px 115px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 4px 2px; 
+    cursor: pointer; 
+    border-radius: 12px; 
+    border: none; 
+    color: white; 
+  }
+
+  p {
+    text-align: center;
+  }
+
+    form h2 {
+        text-align: center;
+        font-weight: bold;
+        text-decoration: underline;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    label {
+        display: block;
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="time"],
+    textarea,
+    select {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    textarea:focus,
+    select:focus {
+        border-color: #333;
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background: #333;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .button-template {
+        width: 20%;
+        padding: 10px;
+        background: #333;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        }
+
+    button:hover {
+        background: #575757;
+    }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="sidebar">
+        <br><br><br><br>
+        <img src="asset/profile-picture.png" alt="">
+        <p>RINGGANA PARTA WIGUNA</p>
+        <br>
+        <ul>
+            <li><a href="#" onclick="showPage('pengaturan-umum')">Pengaturan Umum</a></li>
+            <li><a href="#" onclick="showPage('pilih-tema')">Pilih Tema</a></li>
+            <li><a href="#" onclick="showPage('mempelai-pria')">Mempelai Pria</a></li>
+            <li><a href="#" onclick="showPage('mempelai-wanita')">Mempelai Wanita</a></li>
+            <li><a href="#" onclick="showPage('cerita-cinta')">Cerita Cinta</a></li>
+            <li><a href="#" onclick="showPage('informasi-acara')">Informasi Acara</a></li>
+            <li><a href="#" onclick="showPage('informasi-undangan')">Informasi Undangan</a></li>
+            <li><a href="#" onclick="showPage('rsvp-undangan')">RSVP Undangan</a></li>
+            <li><a href="#" onclick="showPage('foto-galeri')">Foto Galeri</a></li>
+            <li><a href="#" onclick="showPage('background-music')">Background Music</a></li>
+            <li><a href="#" onclick="showPage('background-foto')">Background Foto</a></li>
+            <li><a href="#" onclick="showPage('video-galeri')">Video Galeri</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div id="pengaturan-umum" class="hidden">
+            <br><br>
+            <form action="proses_backend.php" method="post">
+            <h2>Pengaturan Domain</h2>
+                <label for="nama-domain">Nama Domain:</label>
+                <input type="text" id="nama-domain" name="nama-domain"><br><br>
+                
+                <label for="judul-website">Judul Website:</label>
+                <input type="text" id="judul-website" name="judul-website" placeholder="Ketik judul untuk website anda"><br><br>
+                
+                <label for="deskripsi">Deskripsi:</label>
+                <textarea id="deskripsi" name="deskripsi" placeholder="Ketik deskripsi untuk website anda"></textarea><br><br>
+                
+                <label for="kata-kunci">Kata Kunci:</label>
+                <textarea id="kata-kunci" name="kata-kunci" placeholder="Ketik keyword yang berhubungan dengan website anda"></textarea><br><br>
+                
+                <button type="submit">SIMPAN PERUBAHAN</button>
+            </form>
+        </div>
+        <div id="pilih-tema" class="hidden">
+        <br><br>
+        <form action="">
+        <h2>Pilih Tema</h2>
+        <p>Anda dapat banyak template yang kami sediakan untuk anda, silahkan pilih template yang paling anda sukai untuk mempercantik tampilan website pernikahan anda.</p>
+        <ul>
+            <li>
+                <h6 class="judul-template">Bloom Theme</h6>
+                <img src="asset/template/template-1.png" class="img img-template" alt="Bloom Theme" /><br>
+                <div class="button-container">
+                <button type="submit" class="button button-template">Pilih</button>
+                <button type="submit" class="button button-template">Preview</button>
+                </div>
+            </li>
+            <li>
+            <h6 class="judul-template">Bloom Theme</h6>
+                <img src="asset/template/template-1.png" alt="Bloom Theme" /><br>
+                <div class="button-container">
+                <button type="submit" class="button button-template">Pilih</button>
+                <button type="submit" class="button button-template">Preview</button>
+                </div>
+            </li>
+            <li>
+            <h6 class="judul-template">Bloom Theme</h6>
+                <img src="asset/template/template-1.png" alt="Bloom Theme" /><br>
+                <div class="button-container">
+                <button type="submit" class="button button-template">Pilih</button>
+                <button type="submit" class="button button-template">Preview</button>
+                </div>
+            </li>
+        </ul>
+        </form>
+    </div>        
+        <div id="mempelai-pria" class="hidden">    
+        <br><br>        
+            <form action="proses_backend.php" method="post">
+            <h2>Mempelai Pria</h2>
+                <label for="nama-mempelai-pria">Nama Mempelai Pria:</label>
+                <input type="text" id="nama-mempelai-pria" name="nama-mempelai-pria" placeholder="Masukkan nama lengkap mempelai pria"><br><br>
+                
+                <label for="nama-panggilan-pria">Nama Panggilan:</label>
+                <input type="text" id="nama-panggilan-pria" name="nama-panggilan-pria" placeholder="Masukkan nama panggilan mempelai pria"><br><br>
+                
+                <label for="nama-ayah">Nama Ayah:</label>
+                <input type="text" name="nama-ayah" placeholder="Masukkan nama ayah mempelai pria"></textarea><br><br>
+                
+                <label for="nama-ibu">Nama Ibu:</label>
+                <input type="text" name="nama-ibu" placeholder="Masukkan nama ibu mempelai pria"></textarea><br><br>
+
+                <label for="tentang-mempelai-pria">Tentang Mempelai Pria:</label>
+                <textarea id="tentang-mempelai-pria" name="tentang-mempelai-pria" placeholder=""></textarea><br><br>
+                
+                <!-- upload foto mempelai pria -->
+
+                <button type="submit">SIMPAN PERUBAHAN</button>
+            </form>
+        </div>
+        <div id="mempelai-wanita" class="hidden">
+        <br><br>
+            <form action="proses_backend.php" method="post">
+            <h2>Mempelai Wanita</h2>
+                <label for="nama-mempelai-wanita">Nama Mempelai wanita:</label>
+                <input type="text" id="nama-mempelai-wanita" name="nama-mempelai-wanita" placeholder="Masukkan nama lengkap mempelai wanita"><br><br>
+                
+                <label for="nama-panggilan-wanita">Nama Panggilan:</label>
+                <input type="text" id="nama-panggilan-wanita" name="nama-panggilan-wanita" placeholder="Masukkan nama panggilan mempelai wanita"><br><br>
+                
+                <label for="nama-ayah">Nama Ayah:</label>
+                <input type="text" name="nama-ayah" placeholder="Masukkan nama ayah mempelai wanita"><br><br>
+                
+                <label for="nama-ibu">Nama Ibu:</label>
+                <input type="text" name="nama-ibu" placeholder="Masukkan nama ibu mempelai wanita"><br><br>
+
+                <label for="tentang-mempelai-wanita">Tentang Mempelai wanita:</label>
+                <textarea id="tentang-mempelai-wanita" name="tentang-mempelai-wanita" placeholder=""></textarea><br><br>
+
+                <!-- upload foto mempelai wanita -->
+                
+                <button type="submit">SIMPAN PERUBAHAN</button>
+            </form>
+        </div>
+        <div id="cerita-cinta" class="hidden">
+        <br><br>
+            <form action="proses_backend.php" method="post">
+            <h2>Cerita Cinta</h2>
+                <label for="tanggal-cerita">Tanggal Cerita:</label>
+                <input type="text" id="tanggal-cerita" name="tanggal-cerita" placeholder="Masukkan nama lengkap mempelai wanita"><br><br>
+                
+                <label for="judul-cerita">Judul Cerita:</label>
+                <input type="text" id="judul-cetita" name="judul-cerita" placeholder="Masukkan nama panggilan mempelai wanita"><br><br>
+                
+                <label for="cerita">Cerita:</label>
+                <textarea id="cerita" name="cerita" placeholder=""></textarea><br><br>
+                
+                <!-- upload foto cerita cinta -->
+
+                <button type="submit">SIMPAN PERUBAHAN</button>
+            </form>
+        </div>
+        <div id="informasi-acara" class="hidden">
+        <br><br>
+            <form action="proses_backend.php" method="post">
+            <h2>Informasi Acara</h2>
+                <h2>Pengaturan Umum Acara</h2>
+                <label for="zona-waktu">Zona Waktu:</label>
+                <select id="zona-waktu" name="zona-waktu"> 
+                    <option value="opsi1">WIB</option> 
+                    <option value="opsi2">WITA</option> 
+                    <option value="opsi3">WIT</option> 
+                </select><br><br>
+                
+                <label for="agama">Agama:</label>
+                <select id="agama" name="agama"> 
+                    <option value="opsi1">Islam</option> 
+                    <option value="opsi2">Kristen</option> 
+                    <option value="opsi3">Buddha</option> 
+                </select><br><br>
+
+                <label for="jenis-map">Jenis Map:</label>
+                <input type="text" id="jenis-map" name="jenis-map" placeholder="Static Google Maps"><br><br>
+
+                <h2>Akad Nikah</h2>
+                <label for="nama-acara">Nama Acara:</label>
+                <input type="text" id="nama-acara" name="nama-acara" placeholder="Tulis bila ada nama lain"><br><br>
+
+                <label for="tanggal-akad-nikah">Tanggal Akad Nikah:</label>
+                <input type="date" id="tanggal-akad-nikah" name="tanggal-akad-nikah"><br><br>
+
+                <label for="waktu-acara">Waktu Acara:</label>
+                <input type="time" id="waktu-acara" name="waktu-acara">sampai<input type="time" id="waktu-acara" name="waktu-acara"><br><br>
+
+                <label for="tempat-alamat">Tempat dan Alamat:</label>
+                <textarea id="tempat-alamat" name="tempat-alamat" placeholder=""></textarea><br><br>
+                
+                <!-- input url maps tempat pernikahan -->
+
+                <h2>Resepsi Pernikahan</h2>
+                <label for="nama-acara">Nama Acara:</label>
+                <input type="text" id="nama-acara" name="nama-acara" placeholder="Tulis bila ada nama lain"><br><br>
+
+                <label for="tanggal-resepsi">Tanggal Resepsi:</label>
+                <input type="date" id="tanggal-resepsi" name="tanggal-resepsi"><br><br>
+
+                <label for="waktu-acara">Waktu Acara:</label>
+                <input type="time" id="waktu-acara" name="waktu-acara">sampai<input type="time" id="waktu-acara" name="waktu-acara"><br><br>
+
+                <label for="tempat-alamat">Tempat dan Alamat:</label>
+                <textarea id="tempat-alamat" name="tempat-alamat" placeholder=""></textarea><br><br>
+                
+                <!-- input url maps tempat pernikahan -->                
+
+                <button type="submit">SIMPAN INFORMASI ACARA</button>
+            </form>
+        </div>
+        <div id="informasi-undangan" class="hidden">    
+        <br><br>        
+            <form>
+            <h2>Informasi Undangan</h2>
+                <label for="turut-mengundang">Turut Mengundang:</label>
+                <textarea id="text" name="turut-mengundang" placeholder=""></textarea><br><br>
+                
+                <label for="catatan-tambahan">Catatan Tambahan:</label>
+                <textarea id="catatan-tambahan" name="catatan-tambahan" placeholder=""></textarea><br><br>
+                
+                <button type="submit">SIMPAN PERUBAHAN</button>
+            </form>
+        </div>
+        <div id="rsvp-undangan" class="hidden">     
+        <br><br>       
+            <form>
+            <h2>RSVP Undangan</h2>
+                <button type="submit">NON AKTIFKAN</button>
+                <p>Ada 0 undangan yang akan hadir dan ada 0 yang tidak. Berikut ini adalah daftar undangan yang telah mengisi informasi RSVP untuk anda.</p>
+
+                <!-- input nama, hubungan, kehadiran, aksi -->
+
+            </form>
+        </div>
+        <div id="foto-galeri" class="hidden">         
+        <br><br>               
+             <form action="proses_backend.php" method="post">
+             <h2>Foto Galeri</h2>
+                <label for="judul-foto">Judul Foto:</label>
+                <input type="text" id="judul-foto" name="judul-foto" placeholder="Masukan Judul Photo"><br><br>
+                
+                <label for="keterangan-foto">Keterangan Foto:</label>
+                <textarea id="keterangan-foto" name="keterangan-foto" placeholder="Ceritakan lebih lengkap tentang photo yang akan anda upload"></textarea><br><br>
+                
+                <label for="pilih-foto">Pilih Foto:</label>
+                <input type="file" id="pilih-foto" name="pilih-foto" placeholder="Masukan foto anda yang berformat JPEG atau JPG"><br><br>
+                
+                <button type="submit">UNGGAH FOTO</button>
+            </form>
+        </div>
+        <div id="background-music" class="hidden">   
+        <br><br>         
+            <form>
+            <h2>Background Music</h2>
+                <label for="tanpa-audio">Tanpa Audio:</label>
+                <audio controls> <source src="path/to/your/music.mp3" type="audio/mpeg"></audio>
+                
+                <label for="tanpa-audio">Tanpa Audio:</label>
+                <audio controls> <source src="path/to/your/music.mp3" type="audio/mpeg"></audio>
+
+                <label for="tanpa-audio">Tanpa Audio:</label>
+                <audio controls> <source src="path/to/your/music.mp3" type="audio/mpeg"></audio>
+            </form>
+        </div>
+        <div id="background-foto" class="hidden">
+        <br><br>
+            <form>
+            <h2>Background Foto</h2>
+                <form action="upload.php" method="post" enctype="multipart/form-data"> 
+                <label for="fileToUpload">Pilih foto untuk diunggah:</label> 
+                <input type="file" name="fileToUpload" id="fileToUpload"> 
+                <button type="submit">UNGGAH BACKGROUND FOTO</button>
+            </form>
+        </div>
+        <div id="video-galeri" class="hidden">    
+        <br><br>        
+            <form>
+            <h2>Video Galeri</h2>
+                <label for="judul-video">Judul Video:</label>
+                <input type="text" id="judul-video" name="judul-video" placeholder="Masukkan judul video anda"><br><br>
+                
+                <label for="keterangan">Keterangan:</label>
+                <textarea id="keterangan" name="keterangan" placeholder="Ceritakan lebih lengkap tentang video yang akan anda upload"></textarea><br><br>
+                
+                <label for="youtube-url">Youtube URL:</label>
+                <input type="text" id="youtube-url" name="youtube-url" placeholder="Masukkan URL youtube video anda"><br><br>
+                
+                <button type="submit">SIMPAN PERUBAHAN</button>
+            </form>
+        </div>
+    </div>
+        
+    <script>
+        function showPage(pageId) {
+            // Hide all content sections
+            var contentSections = document.querySelectorAll('.content > div');
+            contentSections.forEach(function(section) {
+                section.classList.add('hidden');
+            });
+
+            // Show the selected content section
+            var selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.remove('hidden');
+            }
+        }
+    </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Cek jika ada data yang tersimpan di local storage dan perbarui form
+    function loadFormData() {
+        let formData = JSON.parse(localStorage.getItem("formData")) || {};
+
+        for (let key in formData) {
+            let input = document.querySelector(`[name="${key}"]`);
+            if (input) {
+                input.value = formData[key];
+            }
+        }
+    }
+
+    // Simpan data saat pengguna mengisi form
+    function saveFormData(event) {
+        let formData = JSON.parse(localStorage.getItem("formData")) || {};
+        formData[event.target.name] = event.target.value;
+        localStorage.setItem("formData", JSON.stringify(formData));
+    }
+
+    // Tambahkan event listener ke semua input dan textarea
+    document.querySelectorAll("input, textarea").forEach((input) => {
+        input.addEventListener("input", saveFormData);
+    });
+
+    // Muat data yang sudah tersimpan
+    loadFormData();
+});
+</script>
+</body>
+</html>
